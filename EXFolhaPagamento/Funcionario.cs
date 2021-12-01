@@ -8,26 +8,28 @@ namespace Folha_de_Pagamento
     {
         //Criando a variavel nome com encapsulamento
         public string Nome { get; set; }
-        //Criando a variavel salario com encapsulamento
+        //Criando a variavel de horas trabalhadas com encapsulamento
         public double HorasTrabalhas { get; set; }
+        //Criando a variavel de valor por hora com encapsulamento
         public double ValorPorHora { get; set; }
-
+        //Criando a variavel de pagamento total com encapsulamento
         public double PagamentoTotal { get; set; }
 
-        /*public Funcionario(string nome, double horastrabalhadas, double valorporhora)
+        //Criando um construtor da classe funcionário e passando os paramêtros
+        public Funcionario(string nome, double horastrabalhadas, double valorporhora, double pagamentototal)
         {
+            //Igualando os paramêtros com as váriaveis
             Nome = nome;
             HorasTrabalhas = horastrabalhadas;
             ValorPorHora = valorporhora;
-        }*/
+            PagamentoTotal = pagamentototal;
+        }
 
-        //Criando o método para incrementar a porcentagem ao salario
-        //public abstract double SalarioTotal();
-
-        public void Salario()
+        //Criando o método para imprimir as informações
+        public virtual string Salarios()
         {
-            //Fazendo o calculo da porcentagem
-            PagamentoTotal = HorasTrabalhas * ValorPorHora;
+            //Retornando as informações de nome e pagamento total
+            return Nome + " - Pagamento totaL R$" + PagamentoTotal;
         }
     }
 }
